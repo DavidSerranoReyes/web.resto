@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+}
+
+.logo a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+/* Estilo general para las opciones del menú */
+nav a {
+  text-decoration: none; /* Eliminar cualquier subrayado por defecto */
+  color: white; /* Color inicial del texto */
+  font-size: 18px; /* Ajusta el tamaño de la fuente */
+  font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente aquí */
+  padding: 10px 15px; /* Espaciado interno */
+  transition: border-bottom 0.3s ease; /* Transición suave para el subrayado */
+}
+
+/* Subrayado solo cuando se pasa el mouse */
+nav a:hover {
+  border-bottom: 2px solid white; /* Subrayado blanco */
+  color: white; /* Aseguramos que el color del texto no cambie */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem; /* Menú pequeño y delgado */
+  font-weight: 300; /* Texto delgado */
+}
+
+.hero {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Imagen principal */
+
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.section {
+  font-family: 'Times New Roman', serif; /* Fuente de estilo antiguo */
+  font-size: 4rem; /* Letras grandes */
+  font-weight: bold;
+  color: rgb(180, 122, 35);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.section:hover {
+  transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Fondo que cambia según la sección */
+#eat:hover {
+  background-color: #292828; /* Fondo rojo */
+  color: white;
+}
+
+#drink:hover {
+  background-color: #292828; /* Fondo verde */
+  color: white;
+}
+
+#contact:hover {
+  background-color: #292828; /* Fondo azul */
+  color: white;
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section {
+    font-size: 3rem; /* Reducir tamaño de texto en pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    display: none;
+  }
+}
+
+/* Responsividad para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+  .hero {
+    height: auto; /* Ajustar la altura en pantallas pequeñas */
+    padding: 50px 10px;
+  }
+
+  .section {
+    font-size: 2.5rem; /* Reducir tamaño de las letras en pantallas pequeñas */
+    margin-bottom: 20px;
+    padding: 15px; /* Ajustar espaciado */
+  }
+
+  nav ul {
+    display: none; /* Ocultar el menú de navegación en pantallas móviles */
+  }
+
+  /* Mostrar el menú en un estilo vertical en pantallas pequeñas */
+  nav {
+    display: block;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  /* Ajustar el tamaño de las letras para el menú */
+  nav a {
+    font-size: 1rem;
+  }
+
+  footer {
+    position: static; /* Mover el pie de página a su lugar normal en pantallas pequeñas */
+    padding: 10px;
+  }
+}
+
+/* Responsividad para pantallas más grandes (por ejemplo, tabletas en modo paisaje) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    height: 80vh; /* Reducir la altura de la imagen en pantallas medianas */
+  }
+
+  .section {
+    font-size: 3.5rem; /* Ajustar tamaño para pantallas medianas */
+  }
+
+  .main-content {
+    flex-direction: row; /* Asegurarse de que las secciones estén una al lado de la otra */
+  }
+
+  footer {
+    position: relative; /* Mover el pie de página a su lugar normal */
+  }
+}
