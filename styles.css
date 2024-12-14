@@ -22,6 +22,7 @@ header {
   font-size: 1.5rem;
   text-decoration: none;
 }
+
 /* Estilo general para las opciones del menú */
 nav a {
   text-decoration: none; /* Eliminar cualquier subrayado por defecto */
@@ -57,7 +58,6 @@ nav ul li a {
 .hero {
   height: 100vh;
   background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Imagen principal */
-
   color: white;
   text-align: center;
   display: flex;
@@ -120,38 +120,24 @@ footer p {
   margin: 0;
 }
 
-/* Responsividad */
+/* Responsividad para dispositivos móviles y tabletas pequeñas */
 @media (max-width: 768px) {
+  /* Cambiar la dirección del layout para la sección principal */
   .main-content {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
+  /* Reducir tamaño de texto de las secciones */
   .section {
     font-size: 3rem; /* Reducir tamaño de texto en pantallas pequeñas */
     margin-bottom: 20px;
   }
 
+  /* Esconder el menú de navegación por defecto */
   nav ul {
     display: none;
-  }
-}
-
-/* Responsividad para dispositivos móviles y tabletas */
-@media (max-width: 768px) {
-  .hero {
-    height: auto; /* Ajustar la altura en pantallas pequeñas */
-    padding: 50px 10px;
-  }
-
-  .section {
-    font-size: 2.5rem; /* Reducir tamaño de las letras en pantallas pequeñas */
-    margin-bottom: 20px;
-    padding: 15px; /* Ajustar espaciado */
-  }
-
-  nav ul {
-    display: none; /* Ocultar el menú de navegación en pantallas móviles */
   }
 
   /* Mostrar el menú en un estilo vertical en pantallas pequeñas */
@@ -165,25 +151,32 @@ footer p {
     margin: 10px 0;
   }
 
-  /* Ajustar el tamaño de las letras para el menú */
+  /* Ajustar tamaño del texto para el menú en pantallas pequeñas */
   nav a {
     font-size: 1rem;
   }
 
   footer {
-    position: static; /* Mover el pie de página a su lugar normal en pantallas pequeñas */
+    position: static; /* Mover el pie de página a su lugar normal */
     padding: 10px;
+  }
+
+  /* Ajustar la altura de la hero en pantallas pequeñas */
+  .hero {
+    height: auto;
+    padding: 50px 10px;
   }
 }
 
-/* Responsividad para pantallas más grandes (por ejemplo, tabletas en modo paisaje) */
+/* Responsividad para pantallas medianas (tabletas en modo paisaje) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero {
     height: 80vh; /* Reducir la altura de la imagen en pantallas medianas */
   }
 
+  /* Ajustar tamaño de las secciones */
   .section {
-    font-size: 3.5rem; /* Ajustar tamaño para pantallas medianas */
+    font-size: 3.5rem;
   }
 
   .main-content {
@@ -192,5 +185,44 @@ footer p {
 
   footer {
     position: relative; /* Mover el pie de página a su lugar normal */
+  }
+}
+
+/* Responsividad para pantallas más pequeñas que 480px */
+@media (max-width: 480px) {
+  .logo a {
+    font-size: 1.2rem; /* Reducir el tamaño del logo en pantallas pequeñas */
+  }
+
+  nav ul {
+    display: none; /* Esconder el menú de navegación en pantallas muy pequeñas */
+  }
+
+  /* Mostrar el menú en un estilo vertical en pantallas móviles */
+  nav {
+    display: block;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav a {
+    font-size: 0.9rem; /* Reducir tamaño del texto del menú */
+  }
+
+  .hero {
+    padding: 30px 10px; /* Ajustar el padding de la hero */
+  }
+
+  .section {
+    font-size: 2.5rem; /* Reducir el tamaño de las letras en pantallas pequeñas */
+    padding: 15px; /* Ajustar espaciado */
+  }
+
+  footer {
+    padding: 5px; /* Reducir el padding del pie de página */
   }
 }
